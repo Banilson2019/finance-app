@@ -6,7 +6,6 @@ const app = express()
 app.use(express.json())
 
 app.post('/api/users', async (req, res) => {
-    //endpoint de criação de usuário
     const createUserController = new CreateUserController()
     const { statusCode, body } = await createUserController.execute(req)
     res.status(statusCode).send(body)
