@@ -1,8 +1,10 @@
-import { GetUserByIdUseCase } from '../../use-cases/user/index.js'
 import validator from 'validator'
 import { userNotFound, badRequest, ok, serverError } from '../helpers/index.js'
 
 export class GetUserByIdController {
+    constructor(getUserByIdUseCase) {
+        this.getUserByIdUseCase = getUserByIdUseCase
+    }
     async execute(HTTPRequsest) {
         try {
             const isIdValid = validator.isUUID(HTTPRequsest.params.userId)
@@ -12,8 +14,7 @@ export class GetUserByIdController {
                 })
             }
 
-            const getUserByIdUseCase = new GetUserByIdUseCase()
-            const user = await getUserByIdUseCase.execute(
+            const user = await this.getUserByIdUseCase.execute(
                 HTTPRequsest.params.userId,
             )
             if (!user) {
