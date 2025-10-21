@@ -4,19 +4,19 @@ import {
     PostgresCreateUserRepository,
     PostgresDeleteUserRepository,
     PostgresUpdateUserRepository,
-} from '../../repositories/postegres/user/index.js'
+} from '../../repositories/postegres/index.js'
 import {
     CreateUserUseCase,
     DeleteUserUseCase,
     GetUserByIdUseCase,
     UpdateUserUseCase,
-} from '../../use-cases/user/index.js'
+} from '../../use-cases/index.js'
 import {
     CreateUserController,
     DeleteUserController,
     GetUserByIdController,
     UpdateUserController,
-} from '../../controllers/user/index.js'
+} from '../../controllers/index.js'
 
 export const makeGetUserByID = () => {
     const postgreGetUserByIdRepository = new GetUserByIdRepository()

@@ -6,6 +6,7 @@ import {
     makeGetUserByID,
     makeUpdateUser,
 } from './src/factories/controllers/user.js'
+import { makeCreateTransaction } from './src/factories/controllers/transaction.js'
 
 const app = express()
 app.use(express.json())
@@ -31,6 +32,12 @@ app.patch('/api/users/:userId', async (req, res) => {
 app.delete('/api/users/:userId', async (req, res) => {
     const deleteUser = makeDeleteUser()
     const { statusCode, body } = await deleteUser.execute(req)
+    res.status(statusCode).send(body)
+})
+
+app.post('/api/transaction', async (req, res) => {
+    const createTransaction = makeCreateTransaction()
+    const { statusCode, body } = await createTransaction.execute(req)
     res.status(statusCode).send(body)
 })
 app.listen(process.env.PORT, () =>
