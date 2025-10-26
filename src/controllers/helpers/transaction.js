@@ -1,5 +1,5 @@
 import validator from 'validator'
-import { badRequest } from './index.js'
+import { badRequest, notFound } from './index.js'
 
 export const checkIfAmountIsValid = (amount) => {
     return validator.isCurrency(amount.toString(), {
@@ -22,5 +22,10 @@ export const invalidTypeResponse = () => {
 export const invalidAmountResponse = () => {
     return badRequest({
         message: 'The amount must be a valid currency',
+    })
+}
+export const ivalidTransactionNotFound = () => {
+    return notFound({
+        message: 'transaction not found',
     })
 }

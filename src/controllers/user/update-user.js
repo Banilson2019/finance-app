@@ -27,6 +27,7 @@ export class UpdateUserController {
             }
 
             const params = HTTPRequest.body
+
             const allowedFields = [
                 'first_name',
                 'last_name',
