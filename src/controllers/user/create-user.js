@@ -43,6 +43,7 @@ export class CreateUserController {
             }
 
             const createUser = await this.createUseCase.execute(params)
+
             return created(createUser)
         } catch (error) {
             console.error(error)
