@@ -1,10 +1,13 @@
-#pocotes de dependecias
+#Dependencies
 node_modules
-# dados da BD
+
+# postgres volume
 .postgres
 .postgres-data
-#Variaveis 
+
+#Environment variables
 .env
+
 #docker compose
 docker-compose.yml
 
