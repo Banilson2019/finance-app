@@ -11,3 +11,7 @@ node_modules
 #docker compose
 docker-compose.yml
 
+
+/src/generated/prisma
+
+/src/generated/prisma
