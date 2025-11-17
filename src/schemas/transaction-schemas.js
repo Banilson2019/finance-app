@@ -33,5 +33,5 @@ export const createTransactionSchema = z.object({
                 }
             )
         }),
-    type: z.enum(['EARNING', 'EXPONSE', 'INVESTMENT']),
+    type: z.enum(['EARNING', 'EXPENSE', 'INVESTMENT']),
 })
